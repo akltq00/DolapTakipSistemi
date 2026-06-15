@@ -1,0 +1,353 @@
+[
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.AdminDatabaseController",
+    "Method": "Tables",
+    "RelativePath": "api/admin/database/tables",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[DolapTakipSistemi.Api.Controllers.DatabaseTableResponse, DolapTakipSistemi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.AdminDatabaseController",
+    "Method": "Columns",
+    "RelativePath": "api/admin/database/tables/{schema}/{table}/columns",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "schema",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "table",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[DolapTakipSistemi.Api.Controllers.DatabaseColumnResponse, DolapTakipSistemi.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.AdminDatabaseController",
+    "Method": "Rows",
+    "RelativePath": "api/admin/database/tables/{schema}/{table}/rows",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "schema",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "table",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DolapTakipSistemi.Api.Controllers.DatabaseRowsResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.AdminDatabaseController",
+    "Method": "InsertRow",
+    "RelativePath": "api/admin/database/tables/{schema}/{table}/rows",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "schema",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "table",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "values",
+        "Type": "System.Collections.Generic.Dictionary\u00602[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Text.Json.JsonElement, System.Text.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.AdminDatabaseController",
+    "Method": "UpdateRow",
+    "RelativePath": "api/admin/database/tables/{schema}/{table}/rows/{key}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "schema",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "table",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "values",
+        "Type": "System.Collections.Generic.Dictionary\u00602[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Text.Json.JsonElement, System.Text.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.AdminDatabaseController",
+    "Method": "DeleteRow",
+    "RelativePath": "api/admin/database/tables/{schema}/{table}/rows/{key}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "schema",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "table",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "key",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.DolaplarController",
+    "Method": "Listele",
+    "RelativePath": "api/dolaplar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[DolapTakipSistemi.Application.Contracts.DolapResponse, DolapTakipSistemi.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.DolaplarController",
+    "Method": "Olustur",
+    "RelativePath": "api/dolaplar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DolapTakipSistemi.Application.Contracts.DolapOlusturRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DolapTakipSistemi.Application.Contracts.DolapResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.DolaplarController",
+    "Method": "Getir",
+    "RelativePath": "api/dolaplar/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DolapTakipSistemi.Application.Contracts.DolapResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.DolaplarController",
+    "Method": "Guncelle",
+    "RelativePath": "api/dolaplar/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "DolapTakipSistemi.Application.Contracts.DolapGuncelleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DolapTakipSistemi.Application.Contracts.DolapResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.DolaplarController",
+    "Method": "Sil",
+    "RelativePath": "api/dolaplar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.DolaplarController",
+    "Method": "ZimmeteAl",
+    "RelativePath": "api/dolaplar/{id}/zimmete-al",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "DolapTakipSistemi.Application.Contracts.ZimmeteAlRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DolapTakipSistemi.Application.Contracts.DolapResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "DolapTakipSistemi.Api.Controllers.DolaplarController",
+    "Method": "ZimmetiKaldir",
+    "RelativePath": "api/dolaplar/{id}/zimmeti-kaldir",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "DolapTakipSistemi.Application.Contracts.ZimmetiKaldirRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DolapTakipSistemi.Application.Contracts.DolapResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+wwwroot\app.js
+wwwroot\database-editor.html
+wwwroot\database-editor.js
+wwwroot\index.html
+wwwroot\styles.css

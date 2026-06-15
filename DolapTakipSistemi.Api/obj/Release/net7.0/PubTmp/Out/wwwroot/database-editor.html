@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Database Editor</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app-shell editor-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">DolapTakipSistemi</p>
+        <h1>Database Editor</h1>
+      </div>
+      <div class="topbar-actions">
+        <a class="secondary-link" href="/">Ana ekran</a>
+        <a class="swagger-link" href="/swagger">Swagger</a>
+        <button class="secondary-button" type="button" id="logoutButton">Cikis Yap</button>
+      </div>
+    </header>
+
+    <section class="editor-layout">
+      <aside class="editor-sidebar">
+        <div class="editor-panel-header">
+          <h2>Tablolar</h2>
+          <button class="icon-button" type="button" id="refreshTablesButton" aria-label="Yenile">r</button>
+        </div>
+        <div id="tableList" class="table-list"></div>
+      </aside>
+
+      <section class="editor-main">
+        <div class="editor-panel-header">
+          <div>
+            <p class="eyebrow">Secili tablo</p>
+            <h2 id="selectedTableTitle">Tablo secin</h2>
+          </div>
+          <button class="primary-button" type="button" id="addRowButton" disabled>Satir ekle</button>
+        </div>
+
+        <p id="editorMessage" class="editor-message"></p>
+        <div id="rowsContainer" class="rows-container"></div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="adminDialog">
+    <form id="adminForm" method="dialog">
+      <div class="dialog-header">
+        <h2>Admin sifresi</h2>
+      </div>
+      <label>
+        Sifre
+        <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+      </label>
+      <p id="adminError" class="form-error"></p>
+      <div class="dialog-actions">
+        <button type="submit" class="primary-button">Giris</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="rowDialog">
+    <form id="rowForm" method="dialog">
+      <div class="dialog-header">
+        <h2 id="rowDialogTitle">Satir</h2>
+        <button class="icon-button" type="button" id="closeRowDialog" aria-label="Kapat">x</button>
+      </div>
+      <div id="rowFields" class="row-fields"></div>
+      <p id="rowError" class="form-error"></p>
+      <div class="dialog-actions">
+        <button type="button" id="cancelRowButton" class="secondary-button">Vazgec</button>
+        <button type="submit" class="primary-button">Kaydet</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/database-editor.js"></script>
+</body>
+</html>

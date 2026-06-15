@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ogrenci Dolap Takip Sistemi</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Ogrenci Dolap Takip Sistemi</p>
+        <h1>Dolap zimmetleri</h1>
+      </div>
+      <div class="topbar-actions">
+        <a class="swagger-link" href="/swagger">Swagger</a>
+        <button class="secondary-button" type="button" id="helpButton">?</button>
+        <a class="secondary-link" href="/database-editor.html">Database Editor</a>
+      </div>
+    </header>
+
+    <section class="summary" aria-label="Dolap ozeti">
+      <div>
+        <span id="totalCount">0</span>
+        <p>Toplam dolap</p>
+      </div>
+      <div>
+        <span id="availableCount">0</span>
+        <p>Bos</p>
+      </div>
+      <div>
+        <span id="assignedCount">0</span>
+        <p>Zimmetli</p>
+      </div>
+    </section>
+
+    <section id="lockerGrid" class="locker-grid" aria-live="polite"></section>
+  </main>
+
+  <dialog id="assignDialog">
+    <form id="assignForm" method="dialog">
+      <div class="dialog-header">
+        <h2><span id="selectedLockerNumber"></span> numarali dolap</h2>
+        <button class="icon-button" type="button" id="closeDialog" aria-label="Kapat">x</button>
+      </div>
+
+      <label>
+        Ad
+        <input id="firstName" name="firstName" maxlength="60" autocomplete="given-name" required>
+      </label>
+
+      <label>
+        Soyad
+        <input id="lastName" name="lastName" maxlength="60" autocomplete="family-name" required>
+      </label>
+
+      <label>
+        Okul numarasi
+        <input id="studentNumber" name="studentNumber" maxlength="30" autocomplete="off" required>
+      </label>
+
+      <label>
+        Zimmet sifresi
+        <input id="assignPassword" name="password" type="password" minlength="4" maxlength="20" autocomplete="new-password" required>
+      </label>
+
+      <p id="formError" class="form-error"></p>
+
+      <div class="dialog-actions">
+        <button type="button" id="cancelButton" class="secondary-button">Vazgec</button>
+        <button type="submit" class="primary-button">Zimmete al</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="releaseDialog">
+    <form id="releaseForm" method="dialog">
+      <div class="dialog-header">
+        <h2><span id="releaseLockerNumber"></span> numarali dolap</h2>
+        <button class="icon-button" type="button" id="closeReleaseDialog" aria-label="Kapat">x</button>
+      </div>
+
+      <p class="dialog-copy">Dolabi zimmetten cikarmak icin zimmet alirken belirlediginiz sifreyi girin.</p>
+
+      <label>
+        Zimmet sifresi
+        <input id="releasePassword" name="password" type="password" minlength="4" maxlength="20" autocomplete="current-password" required>
+      </label>
+
+      <p id="releaseError" class="form-error"></p>
+
+      <div class="dialog-actions">
+        <button type="button" id="cancelReleaseButton" class="secondary-button">Vazgec</button>
+        <button type="submit" class="primary-button">Zimmeti kaldir</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="helpDialog">
+    <div class="help-content">
+      <div class="dialog-header">
+        <h2>Nasil kullanilir?</h2>
+        <button class="icon-button" type="button" id="closeHelpDialog" aria-label="Kapat">x</button>
+      </div>
+      <ol>
+        <li>Bos bir dolap secin.</li>
+        <li>Ad, soyad, okul numarasi ve 4-20 karakterlik zimmet sifresi girin.</li>
+        <li>Zimmetli dolaplar ekranda ogrenci adiyla gorunur.</li>
+        <li>Dolabi bosaltmak icin zimmetli dolaba tiklayip ayni sifreyi girin.</li>
+      </ol>
+    </div>
+  </dialog>
+
+  <script src="/app.js"></script>
+</body>
+</html>
