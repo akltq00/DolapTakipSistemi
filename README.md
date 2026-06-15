@@ -2,7 +2,6 @@
 
 Clean Architecture ile hazirlanan ASP.NET Core Web API, Swagger ve MSSQL kullanan ogrenci dolap zimmet uygulamasi.
 
-> Not: Bu bilgisayarda .NET 10 SDK kurulu olmadigi icin proje `net7.0` hedefiyle olusturuldu. .NET 10 SDK kuruldugunda `src/*/*.csproj` icindeki `TargetFramework` degeri `net10.0` olarak guncellenebilir.
 
 ### Proje yapisi
 
@@ -59,4 +58,3 @@ Uygulama acildiktan sonra:
 - Swagger: `https://localhost:PORT/swagger`
 - Database Editor: `https://localhost:PORT/database-editor.html`
 
-> Daha once `EnsureCreated` ile olusmus eski bir veritabani varsa EF migration gecmisi olmayabilir. Gelistirme ortaminda en temiz yol eski `DolapTakipSistemi` veritabanini silip uygulamayi yeniden calistirmaktir.
